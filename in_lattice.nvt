@@ -15,7 +15,7 @@ region box block 0 1 0 1 0 1 units lattice
 create_box 1 box
 lattice	fcc ${latconst} orient x 1 0 0 orient y 0 1 0 orient z 0 0 1  
 create_atoms 1 box
-replicate 25 25 25
+replicate 100 100 100
 
 # ---------- Define Interatomic Potential --------------------- 
 pair_style eam/alloy 
