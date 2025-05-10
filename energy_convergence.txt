@@ -1,0 +1,174 @@
+thermo 1
+thermo_style custom step pe etotal f_1
+min_style cg
+minimize 1e-25 1e-25 5000 10000
+
+CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE
+
+Your simulation uses code contributions which should be cited:
+
+- GPU package (short-range, long-range and three-body potentials): doi:10.1016/j.cpc.2010.12.021, doi:10.1016/j.cpc.2011.10.012, doi:10.1016/j.cpc.2013.08.002, doi:10.1016/j.commatsci.2014.10.068, doi:10.1016/j.cpc.2016.10.020, doi:10.3233/APC200086
+
+@Article{Brown11,
+ author = {W. M. Brown and P. Wang and S. J. Plimpton and A. N. Tharrington},
+ title = {Implementing Molecular Dynamics on Hybrid High Performance Computers---Short Range Forces},
+ journal = {Comput.\ Phys.\ Commun.},
+ year =    2011,
+ volume =  182,
+ pages =   {898--911},
+ doi =     {10.1016/j.cpc.2010.12.021}
+}
+
+@Article{Brown12,
+ author = {W. M. Brown and A. Kohlmeyer and S. J. Plimpton and A. N. Tharrington},
+ title = {Implementing Molecular Dynamics on Hybrid High Performance Computers - Particle-Particle Particle-Mesh},
+ journal = {Comput.\ Phys.\ Commun.},
+ year =    2012,
+ volume =  183,
+ doi =     {10.1016/j.cpc.2011.10.012},
+ pages =   {449--459}
+}
+
+@Article{Brown13,
+ author = {W. M. Brown and Y. Masako},
+ title = {Implementing Molecular Dynamics on Hybrid High Performance Computers---Three-Body Potentials},
+ journal = {Comput.\ Phys.\ Commun.},
+ year =    2013,
+ volume =  184,
+ pages =   {2785--2793},
+ doi =     {10.1016/j.cpc.2013.08.002},
+}
+
+@Article{Trung15,
+ author = {T. D. Nguyen and S. J. Plimpton},
+ title = {Accelerating Dissipative Particle Dynamics Simulations for Soft Matter Systems},
+ journal = {Comput.\ Mater.\ Sci.},
+ year =    2015,
+ doi =     {10.1016/j.commatsci.2014.10.068},
+ volume =  100,
+ pages =   {173--180}
+}
+
+@Article{Trung17,
+ author = {T. D. Nguyen},
+ title = {{GPU}-Accelerated {T}ersoff Potentials for Massively Parallel
+    Molecular Dynamics Simulations},
+ journal = {Comput.\ Phys.\ Commun.},
+ year =    2017,
+ doi =     {10.1016/j.cpc.2016.10.020},
+ volume =  212,
+ pages =   {113--122}
+}
+
+@inproceedings{Nikolskiy19,
+ author = {V. Nikolskiy and V. Stegailov},
+ title = {{GPU} Acceleration of Four-Site Water Models in {LAMMPS}},
+ booktitle = {Proceedings of the International Conference on Parallel
+    Computing (ParCo 2019), Prague, Czech Republic},
+ doi =     {10.3233/APC200086},
+ year =    2019
+}
+
+CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE
+
+Switching to 'neigh_modify every 1 delay 0 check yes' setting during minimization
+WARNING: Energy due to 1 extra global DOFs will be included in minimizer energies
+ (src/min.cpp:219)
+Per MPI rank memory allocation (min/avg/max) = 85.47 | 85.47 | 85.47 Mbytes
+   Step         PotEng         TotEng          f_1      
+         0  -209652.92     -209652.92      0            
+         1  -209706.11     -209706.11      0            
+         2  -209754.88     -209754.88      0            
+         3  -209799.22     -209799.22      0            
+         4  -209839.16     -209839.16      0            
+         5  -209874.68     -209874.68      0            
+         6  -209905.78     -209905.78      0            
+         7  -209932.49     -209932.49      0            
+         8  -209954.75     -209954.75      0            
+         9  -209972.58     -209972.58      0            
+        10  -209985.98     -209985.98      0            
+        11  -209994.95     -209994.95      0            
+        12  -209999.43     -209999.43      0            
+        13  -209999.99     -209999.99      0            
+        14  -209999.99     -209999.99      0            
+        15  -210000        -210000         0            
+        16  -210000        -210000         0            
+        17  -210000.01     -210000.01      0            
+        18  -210000.01     -210000.01      0            
+        19  -210000.01     -210000.01      0            
+Loop time of 0.797542 on 14 procs for 19 steps with 62500 atoms
+
+89.5% CPU use with 1 MPI tasks x 14 OpenMP threads
+
+Minimization stats:
+  Stopping criterion = linesearch alpha is zero
+  Energy initial, next-to-last, final = 
+     -209652.918332722  -210000.007086575  -210000.007086575
+  Force two-norm initial, final = 55406.248 51.601533
+  Force max component initial, final = 55406.248 51.601533
+  Final line search alpha, max atom move = 4.6203778e-12 2.3841858e-10
+  Iterations, force evaluations = 19 156
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 0.47736    | 0.47736    | 0.47736    |   0.0 | 59.85
+Neigh   | 0.00033492 | 0.00033492 | 0.00033492 |   0.0 |  0.04
+Comm    | 0.035422   | 0.035422   | 0.035422   |   0.0 |  4.44
+Output  | 0.0057     | 0.0057     | 0.0057     |   0.0 |  0.71
+Modify  | 1.8246e-05 | 1.8246e-05 | 1.8246e-05 |   0.0 |  0.00
+Other   |            | 0.2787     |            |       | 34.95
+
+Nlocal:          62500 ave       62500 max       62500 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Nghost:          40190 ave       40190 max       40190 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Neighs:              0 ave           0 max           0 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+
+Total # of neighbors = 0
+Ave neighs/atom = 0
+Neighbor list builds = 2
+Dangerous builds = 0
+
+variable natoms equal "count(all)"
+variable teng equal "c_eatoms"
+variable length equal "lx"
+variable ecoh equal "v_teng/v_natoms"
+
+variable pe equal "pe"
+variable ke equal "ke"
+variable te equal "etotal"
+
+print "Running simulation with lattice constant = ${latconst}"
+Running simulation with lattice constant = 4
+print "Total energy (eV) = ${teng};"
+Total energy (eV) = -210000.007086575;
+print "Number of atoms = ${natoms};"
+Number of atoms = 62500;
+print "Lattice constant (Angstoms) = ${length};"
+Lattice constant (Angstoms) = 101.251259520461;
+print "Cohesive energy (eV) = ${ecoh};"
+Cohesive energy (eV) = -3.3600001133852;
+
+print "All done!"
+All done!
+#
+# Integration details,
+timestep 0.0025
+fix ensFix all nvt temp 273 273 0.25
+velocity all create 273 4928459 dist gaussian
+fix log_energy all print 1 "${pe} ${ke} ${te}" file energy_time_series.dat screen no
+#dump myDump all  atom 100 traj.dcd
+# Save the starting configuration.
+write_data starting.dat.out
+System init for write_data ...
+
+# Run the simulation.
+thermo 100
+run 1000
+Per MPI rank memory allocation (min/avg/max) = 80.21 | 80.21 | 80.21 Mbytes
+   Step         PotEng         TotEng          f_1      
+        19  -210000.01     -207794.54      0            
+ERROR: Virial was not tallied on needed timestep (src/compute_pressure.cpp:232)
+Last command: run 1000
