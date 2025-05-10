@@ -7,10 +7,10 @@ The simulations investigate the mechanical and thermodynamic properties of singl
 **Execution environment:**
 
 This input script was run using the Aug 2015 version of LAMMPS.
-CPU-based simulation (GPU required)
-Runs on standard HPC cluster or local workstation
 
-SLURM script: 
+CPU-based simulation (GPU required)
+
+Runs on standard HPC cluster or local workstation
 
 **2.1 System Initialization Protocol**
 
@@ -67,10 +67,36 @@ Literature (Tschopp et al., Acta Materialia, 2007) confirms convergence of energ
 
 Our simulations balance physical accuracy with computational feasibility.
 
-**Outputs**
+Simulation: (Python script files)
 
-starting.dat.out: Initial minimized configuration
-
-al.data.out: Thermally equilibrated final configuration
-
-energy.dat: Log or custom dump output (for analysis)
+1.	# Aluminum Atomic structure from LAMMPS
+   
+-	Input file: Input file: in_lattice.nvt
+  
+-	SLURM Submission Script: submitlattice-job.sh
+  
+-	Output files: al.data-lattice.out
+  
+2.	# Energy convergence during minimization:
+   
+-	Input file: Input file: in_autocorrelation.nvt
+  
+-	SLURM Submission Script: submitenergycon-job.sh
+  
+-	Output files: al.data-lattice.out, energy_convergence.log
+  
+3.	# Autocorrelation of energy components:
+   
+-	Input file: Input file: in_autocorrelation.nvt
+  
+-	SLURM Submission Script: submitenergycon-job.sh
+  
+-	Output files: al.data-lattice.out, energy_time_series.log
+  
+4.	# Stress – Strain Response of Aluminum:
+   
+-	Input file: Input file: in_tensile.nvt
+  
+-	SLURM Submission Script: submittensile-job.sh
+  
+-	Output files: al.tensiledata.out, alAl_tens_100.def1.txt
