@@ -30,7 +30,7 @@ compute eatoms all reduce sum c_eng
 # ---------- Run Minimization --------------------- 
 reset_timestep 0 
 fix 1 all box/relax iso 0.0 vmax 0.001
-log timing_energy_lat${latconst}.log
+log energy_convergence.log
 thermo 1 
 thermo_style custom step pe etotal f_1
 min_style cg 
